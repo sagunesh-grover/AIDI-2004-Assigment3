@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+   <body>
+   
+      <center><table border = 1 style="width: 400px;">
+         <thead>
+            <td><b>Student Id</b></td>
+            <td><b>First Name</b></td>
+            <td><b>Last Name</b></td>
+            <td><b>Date of Birth</b></td>
+            <td><b>Amount Due</b></td>
+         </thead>
+         
+         {% for row in rows %}
+            <tr>
+               <td>{{row["sid"]}}</td>
+               <td>{{row["first_name"]}}</td>
+               <td> {{ row["last_name"]}}</td>
+               <td>{{row['dob']}}</td>	
+               <td>{{row['amount_due']}}</td>	
+            </tr>
+         {% endfor %}
+      </table></center>
+      
+      
+      
+   </body>
+</html>
