@@ -70,7 +70,7 @@ Enable CORS. Disable it if you don't need CORS
 """
 @app.after_request
 def after_request(response):
-    response.headers["Access-Control-Allow-Origin"] = "*" # <- You can change "*" for a domain for example "http://localhost"
+    response.headers["Access-Control-Allow-Origin"] = "*"
     response.headers["Access-Control-Allow-Credentials"] = "true"
     response.headers["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS, PUT, DELETE"
     response.headers["Access-Control-Allow-Headers"] = "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization"
@@ -79,8 +79,4 @@ def after_request(response):
 
 if __name__ == "__main__":
     create_tables()
-    """
-    Here you can change debug and port
-    Remember that, in order to make this API functional, you must set debug in False
-    """
     app.run(host='0.0.0.0', port=8000, debug=False)
